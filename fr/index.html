@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>warpKRON — Memecoin de Vélocité et Routage de la Famille KRON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="warpKRON est la memecoin de la Famille KRON sur le thème de la vitesse, du routage et du moteur warp, inspirée par le mouvement blockchain à haute vélocité, le routage IA et l'accélération inter-systèmes. Informatif uniquement. Pas de conseil financier." />
+  <meta property="og:title" content="warpKRON — Memecoin de Vélocité et Routage de la Famille KRON" />
+  <meta property="og:description" content="Memecoin expérimentale à vitesse warp de la Famille KRON. Pas de conseil financier. Risque élevé." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#020617" />
+
+  <style>
+    :root {
+      --bg:#020617;
+      --ink:#f9fafb;
+      --muted:#9ca3af;
+      --soft:#d1d5db;
+      --line:rgba(255,255,255,.12);
+      --cyan:#06b6d4;
+      --sky:#38bdf8;
+      --blue:#2563eb;
+      --violet:#7c3aed;
+      --purple:#a855f7;
+      --pink:#f472b6;
+      --gold:#fbbf24;
+      --shadow:0 28px 90px rgba(0,0,0,.42);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%,rgba(6,182,212,.22),transparent 34rem),
+        radial-gradient(circle at 88% 12%,rgba(124,58,237,.22),transparent 34rem),
+        radial-gradient(circle at 50% 62%,rgba(244,114,182,.10),transparent 42rem),
+        linear-gradient(180deg,#020617 0%,#07112f 54%,#020617 100%);
+      overflow-x:hidden;
+    }
+
+    body:before{
+      content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 80%);
+    }
+
+    body:after{
+      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+      background:linear-gradient(110deg,transparent 0%,rgba(56,189,248,.08) 46%,rgba(244,114,182,.08) 50%,transparent 54%);
+      transform:translateX(-100%);animation:warpScan 7s linear infinite;
+    }
+
+    @keyframes warpScan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+    a{color:#67e8f9;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{width:min(1200px,calc(100% - 40px));margin:0 auto}
+
+    header{position:sticky;top:0;z-index:100;background:rgba(2,6,23,.78);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+
+    .nav{min-height:78px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+
+    .brand{display:flex;align-items:center;gap:12px;font-weight:950;letter-spacing:-.04em;font-size:1.16rem;color:#fff}
+
+    .brand-mark{width:46px;height:46px;border-radius:17px;position:relative;background:conic-gradient(from 180deg,var(--cyan),var(--sky),var(--violet),var(--pink),var(--cyan));box-shadow:0 16px 42px rgba(6,182,212,.24)}
+
+    .brand-mark:before{content:"wK";position:absolute;inset:8px;border-radius:12px;display:grid;place-items:center;color:#020617;font-weight:1000;background:rgba(224,242,254,.92);letter-spacing:-.08em}
+
+    nav{display:flex;align-items:center;gap:16px;color:var(--soft);font-weight:760;font-size:.92rem}
+    nav a{color:var(--soft)}
+    nav a:hover{color:white}
+
+    .nav-cta{color:#020617!important;background:linear-gradient(135deg,var(--cyan),#e0f2fe);padding:12px 18px;border-radius:999px;font-weight:950;box-shadow:0 14px 34px rgba(6,182,212,.20)}
+
+    .mobile-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.06);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+
+    .mobile-toggle span{width:20px;height:2px;background:white;border-radius:999px;transition:.18s}
+    .mobile-menu{display:none;border-top:1px solid var(--line);background:rgba(2,6,23,.96);backdrop-filter:blur(18px)}
+    .mobile-menu-inner{width:min(1200px,calc(100% - 40px));margin:0 auto;display:grid;gap:10px;padding:16px 0 22px}
+    .mobile-menu a{padding:14px 16px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:850;color:var(--soft)}
+
+    .lang-switcher{display:flex;align-items:center;gap:6px;margin-left:8px}
+    .lang-switcher a{padding:5px 9px;border-radius:8px;font-size:.78rem;font-weight:800;color:var(--muted);border:1px solid transparent;transition:.15s}
+    .lang-switcher a:hover{color:white;border-color:var(--line);text-decoration:none}
+    .lang-switcher a.active{color:var(--cyan);border-color:rgba(6,182,212,.4);background:rgba(6,182,212,.1)}
+    .mobile-menu .lang-row{display:flex;gap:8px;padding:10px 16px;flex-wrap:wrap}
+    .mobile-menu .lang-row a{padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:850;color:var(--soft);font-size:.88rem}
+
+    body.menu-open .mobile-menu{display:block}
+    body.menu-open .mobile-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    body.menu-open .mobile-toggle span:nth-child(2){opacity:0}
+    body.menu-open .mobile-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .hero{padding:98px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:54px;align-items:center}
+
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);font-size:.84rem;font-weight:900;box-shadow:0 10px 34px rgba(0,0,0,.18);text-transform:uppercase;letter-spacing:.08em}
+
+    .pulse{width:9px;height:9px;border-radius:999px;background:var(--cyan);box-shadow:0 0 0 7px rgba(6,182,212,.13)}
+
+    h1{margin:24px 0 18px;font-size:clamp(3.3rem,9vw,8rem);line-height:.84;letter-spacing:-.095em;font-weight:1000}
+
+    .gradient-text{background:linear-gradient(135deg,#fff 4%,var(--cyan),var(--sky),var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    .subtitle{margin:0 0 20px;max-width:900px;font-size:clamp(1.35rem,3vw,2.45rem);line-height:1.06;letter-spacing:-.055em;font-weight:930;color:white}
+    .lead{max-width:780px;margin:0;color:var(--muted);font-size:1.06rem;line-height:1.78}
+
+    .hero-warning{margin-top:22px;max-width:820px;padding:15px 17px;border:1px solid rgba(6,182,212,.30);border-radius:20px;background:rgba(6,182,212,.10);color:#cffafe;font-size:.92rem;line-height:1.58;font-weight:680}
+
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+    .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);color:white;font-weight:900;transition:.18s}
+
+    .btn:hover{transform:translateY(-2px);text-decoration:none}
+    .btn.primary{color:#020617;border:none;background:linear-gradient(135deg,var(--cyan),#e0f2fe);box-shadow:0 20px 52px rgba(6,182,212,.24)}
+
+    .coin-card{min-height:585px;border-radius:42px;border:1px solid var(--line);background:radial-gradient(circle at 50% 34%,rgba(6,182,212,.26),transparent 14rem),radial-gradient(circle at 78% 20%,rgba(124,58,237,.24),transparent 16rem),radial-gradient(circle at 28% 76%,rgba(244,114,182,.13),transparent 16rem),linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));box-shadow:var(--shadow);position:relative;overflow:hidden;padding:26px}
+
+    .coin-card:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(circle at center,black,transparent 76%)}
+
+    .warp-line{position:absolute;height:3px;border-radius:999px;background:linear-gradient(90deg,transparent,rgba(103,232,249,.95),rgba(244,114,182,.75),transparent);z-index:2;animation:linePulse 2.8s ease-in-out infinite}
+
+    .wl1{left:42px;right:42px;top:34%}
+    .wl2{left:66px;right:66px;top:45%;transform:rotate(22deg);animation-delay:-.7s}
+    .wl3{left:66px;right:66px;top:45%;transform:rotate(-22deg);animation-delay:-1.2s}
+    .wl4{left:70px;right:70px;top:54%;transform:rotate(90deg);animation-delay:-1.8s}
+
+    @keyframes linePulse{0%,100%{opacity:.22}50%{opacity:.95}}
+
+    .coin-orb{position:absolute;left:50%;top:39%;width:330px;height:330px;transform:translate(-50%,-50%);border-radius:999px;background:radial-gradient(circle,rgba(255,255,255,.18) 0 18%,transparent 19%),conic-gradient(from 0deg,rgba(6,182,212,.36),rgba(56,189,248,.28),rgba(124,58,237,.28),rgba(244,114,182,.18),rgba(6,182,212,.36));box-shadow:0 28px 90px rgba(6,182,212,.12);z-index:1;animation:pulseOrb 5s ease-in-out infinite}
+
+    @keyframes pulseOrb{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.035)}}
+    .coin-orb:before{content:"";position:absolute;inset:36px;border-radius:999px;border:2px dashed rgba(6,182,212,.44);animation:rotate 18s linear infinite}
+
+    .coin-orb:after{content:"warpKRON";position:absolute;left:50%;top:50%;width:160px;height:160px;transform:translate(-50%,-50%);border-radius:999px;display:grid;place-items:center;color:#020617;font-weight:1000;letter-spacing:-.08em;background:linear-gradient(135deg,var(--cyan),#e0f2fe,var(--violet));box-shadow:0 24px 60px rgba(6,182,212,.25);font-size:.92rem}
+
+    @keyframes rotate{to{transform:rotate(360deg)}}
+
+    .float-chip{position:absolute;z-index:4;padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid var(--line);color:var(--muted);font-size:.82rem;font-weight:850;box-shadow:0 16px 38px rgba(0,0,0,.12);backdrop-filter:blur(12px)}
+
+    .chip1{top:34px;left:34px}.chip2{top:74px;right:34px}.chip3{bottom:152px;left:46px}
+
+    .status-card{position:absolute;left:28px;right:28px;bottom:28px;z-index:6;padding:22px;border-radius:26px;color:white;background:rgba(2,6,23,.90);border:1px solid rgba(255,255,255,.16);box-shadow:0 22px 60px rgba(0,0,0,.28)}
+
+    .status-card strong{display:block;margin-bottom:8px;font-size:1.14rem;letter-spacing:-.04em}
+    .status-card p{margin:0;color:#cffafe;line-height:1.65}
+
+    section{padding:84px 0}
+
+    .light{color:#111827;background:radial-gradient(circle at 15% 0%,rgba(6,182,212,.12),transparent 30rem),linear-gradient(180deg,#f8fbff 0%,#fff 100%)}
+    .section-head{max-width:900px;margin-bottom:36px}
+    .kicker{margin-bottom:12px;color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;font-size:.8rem;font-weight:950}
+    .light .kicker{color:#0891b2}
+    h2{margin:0;font-size:clamp(2rem,4.4vw,4rem);line-height:.98;letter-spacing:-.07em;font-weight:950}
+    .section-text{margin-top:18px;color:var(--muted);font-size:1.02rem;line-height:1.75}
+    .light .section-text{color:#617086}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .statement{padding:38px;border-radius:32px;background:rgba(255,255,255,.07);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .light .statement{background:white;border:1px solid rgba(15,23,42,.12);box-shadow:0 16px 50px rgba(15,23,42,.08)}
+    .statement.big{color:#020617;background:linear-gradient(135deg,var(--cyan),#e0f2fe);border:none}
+    .statement h3{margin:0 0 16px;font-size:1.7rem;line-height:1.08;letter-spacing:-.05em}
+    .statement p{margin:0;color:var(--muted);line-height:1.75}
+    .light .statement p{color:#617086}.statement.big p{color:rgba(2,6,23,.82)}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{min-height:232px;padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.07);box-shadow:0 16px 50px rgba(0,0,0,.12)}
+    .light .card{background:rgba(255,255,255,.90);border:1px solid rgba(15,23,42,.12);box-shadow:0 16px 50px rgba(15,23,42,.08)}
+    .icon{width:48px;height:48px;margin-bottom:18px;display:grid;place-items:center;border-radius:17px;color:#020617;font-weight:950;background:linear-gradient(135deg,var(--cyan),#e0f2fe)}
+    .card h3{margin:0 0 12px;font-size:1.13rem;letter-spacing:-.035em}
+    .card p{margin:0;color:var(--muted);line-height:1.66;font-size:.96rem}.light .card p{color:#617086}
+
+    .token-table{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .token-cell{padding:22px;border-radius:24px;background:white;border:1px solid rgba(15,23,42,.12);box-shadow:0 14px 42px rgba(15,23,42,.07)}
+    .token-cell span{display:block;margin-bottom:8px;color:#0891b2;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;font-weight:950}
+    .token-cell strong{display:block;font-size:1.05rem;word-break:break-word}
+
+    .family-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .family-card{padding:24px;border-radius:26px;background:rgba(255,255,255,.08);border:1px solid var(--line);box-shadow:0 16px 50px rgba(0,0,0,.12)}
+    .family-card h3{margin:0 0 10px;color:#fff;letter-spacing:-.04em}
+    .family-card p{margin:0;color:var(--muted);line-height:1.62}
+
+    .dark-band{padding:58px;border-radius:46px;color:white;background:radial-gradient(circle at top left,rgba(6,182,212,.24),transparent 34rem),radial-gradient(circle at bottom right,rgba(124,58,237,.24),transparent 34rem),#020617;box-shadow:var(--shadow)}
+
+    .dark-band p,.dark-band .section-text{color:#dbeafe;opacity:.88}
+    .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .risk-card{padding:24px;border-radius:26px;background:rgba(255,255,255,.08);border:1px solid var(--line)}
+    .risk-card h3{margin:0 0 10px;color:#fff;letter-spacing:-.04em}
+    .risk-card p{margin:0;color:#d1d5db;line-height:1.68}
+
+    .links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .link-card{padding:22px;border-radius:24px;background:white;border:1px solid rgba(15,23,42,.12);box-shadow:0 14px 42px rgba(15,23,42,.07)}
+    .link-card span{display:block;color:#0891b2;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;font-weight:950;margin-bottom:8px}
+    .link-card a{color:#111827;font-weight:900}
+
+    footer{padding:40px 0 56px;color:var(--muted);font-size:.9rem}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+
+    @media(max-width:980px){nav{display:none}.mobile-toggle{display:inline-flex}.hero-grid,.split{grid-template-columns:1fr}.cards,.token-table,.links-grid{grid-template-columns:1fr 1fr}.family-grid{grid-template-columns:1fr 1fr}.dark-band{padding:34px;border-radius:32px}}
+
+    @media(max-width:640px){.container{width:min(100% - 28px,1200px)}.hero{padding-top:58px}h1{font-size:clamp(3rem,17vw,5rem)}.cards,.token-table,.family-grid,.links-grid,.risk-grid{grid-template-columns:1fr}.actions{flex-direction:column}.btn{width:100%}.coin-card{min-height:560px}.coin-orb{width:245px;height:245px}.chip2{top:82px;right:22px}}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="/fr/" aria-label="warpKRON accueil">
+        <span class="brand-mark"></span>
+        <span>warpKRON</span>
+      </a>
+      <nav>
+        <a href="#about">À propos</a>
+        <a href="#token">Token</a>
+        <a href="#family">Famille KRON</a>
+        <a href="#roadmap">Feuille de Route</a>
+        <a href="#risk">Risque</a>
+        <a href="#links">Liens</a>
+        <a class="nav-cta" href="#token">Info Token</a>
+        <div class="lang-switcher">
+          <a href="/">EN</a>
+          <a href="/es/">ES</a>
+          <a href="/fr/" class="active">FR</a>
+          <a href="/zh/">ZH</a>
+          <a href="/ja/">JA</a>
+        </div>
+      </nav>
+      <button class="mobile-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-mobile-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu-inner">
+        <a href="#about">À propos</a>
+        <a href="#token">Token</a>
+        <a href="#family">Famille KRON</a>
+        <a href="#roadmap">Feuille de Route</a>
+        <a href="#risk">Risque</a>
+        <a href="#links">Liens</a>
+        <div class="lang-row">
+          <a href="/">EN</a>
+          <a href="/es/">ES</a>
+          <a href="/fr/">FR</a>
+          <a href="/zh/">ZH</a>
+          <a href="/ja/">JA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Famille KRON · Meme Vitesse Warp · Réseau Base</div>
+          <h1 class="gradient-text">warpKRON</h1>
+          <p class="subtitle">Le meme haute vélocité du routage, de l'accélération, du mouvement inter-systèmes et de la culture crypto à vitesse warp.</p>
+          <p class="lead">
+            warpKRON est la memecoin de vitesse et routage de la Famille KRON. Elle est inspirée par le mouvement rapide entre chaînes, le routage piloté par IA, les rails de paiement futurs, les chemins de validateurs, l'accélération inter-systèmes et l'idée d'entrer dans l'univers KRON à vitesse warp.
+          </p>
+          <div class="hero-warning">
+            Important : warpKRON est une memecoin expérimentale à haut risque. Ce n'est pas une garantie de paiement, pas une propriété de pont, pas un capital de protocole, pas un titre, pas un produit d'investissement et pas un conseil financier. Elle n'a pas de prix garanti, de liquidité, de listing, d'utilité, de revenus de routage, de dividendes ou d'attente de profit.
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="#token">Voir les Informations du Token →</a>
+            <a class="btn" href="#risk">Lire la Divulgation des Risques</a>
+            <a class="btn" href="#links">Liens Officiels</a>
+          </div>
+        </div>
+
+        <aside class="coin-card" aria-label="Visuel de la monnaie warpKRON">
+          <span class="float-chip chip1">Meme Vitesse Warp</span>
+          <span class="float-chip chip2">Narratif de Routage</span>
+          <span class="float-chip chip3">Réseau Base</span>
+          <div class="warp-line wl1"></div>
+          <div class="warp-line wl2"></div>
+          <div class="warp-line wl3"></div>
+          <div class="warp-line wl4"></div>
+          <div class="coin-orb"></div>
+          <div class="status-card">
+            <strong>warpKRON / Actif Meme Vélocité x Routage</strong>
+            <p>Vitesse, routage, mouvement inter-systèmes, rails IA et culture crypto warp au sein de la Famille KRON.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="light">
+      <div class="container split">
+        <div class="statement big">
+          <h3>warpKRON est un actif meme distinct de la Famille KRON.</h3>
+          <p>warpKRON est une memecoin expérimentale inspirée par la vitesse, le routage, le mouvement inter-chaînes et les narratifs d'infrastructure future. Elle ne représente pas de propriété dans EnteleLINK, EnteleKron, SOVRA, TVK Labs ou tout protocole de routage.</p>
+        </div>
+        <div class="statement">
+          <h3>Vitesse, routes, rails et culture warp</h3>
+          <p>warpKRON est conçu comme un token culturel ludique autour du mouvement rapide, du routage IA, des chemins d'écosystème, des rails de paiement, des routes de validateurs et de l'accélération inter-systèmes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="token" class="light">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Informations sur le Token</div>
+          <h2>Données de base transparentes du token.</h2>
+          <p class="section-text">Les informations suivantes sont descriptives et peuvent changer selon l'évolution du déploiement, de la vérification, de la liquidité, des listings, des audits ou de la documentation juridique.</p>
+        </div>
+        <div class="token-table">
+          <div class="token-cell"><span>Nom</span><strong>warpKRON</strong></div>
+          <div class="token-cell"><span>Symbole</span><strong>WKRON / WARP</strong></div>
+          <div class="token-cell"><span>Réseau</span><strong>Base (EVM)</strong></div>
+          <div class="token-cell"><span>Offre Totale</span><strong>10 000 000 000 (10B)</strong></div>
+          <div class="token-cell"><span>Contrat</span><strong>Sera publié uniquement après vérification officielle</strong></div>
+          <div class="token-cell"><span>Inspiration</span><strong>Vitesse warp · Routage IA · Accélération inter-systèmes</strong></div>
+          <div class="token-cell"><span>Type de Token</span><strong>Memecoin expérimentale</strong></div>
+          <div class="token-cell"><span>Site Officiel</span><strong>warpkron.com</strong></div>
+          <div class="token-cell"><span>Statut Exchange</span><strong>Non garanti / vérifier les sources officielles</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="family">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Famille KRON</div>
+          <h2>Une famille meme, des tokens indépendants séparés.</h2>
+          <p class="section-text">Les tokens de la Famille KRON partagent un univers de marque et une origine culturelle, mais chaque token doit être traité comme une memecoin expérimentale indépendante avec son propre profil de risque.</p>
+        </div>
+        <div class="family-grid">
+          <article class="family-card"><h3>eKRON</h3><p>Memecoin principale de la Famille KRON et passerelle communautaire.</p></article>
+          <article class="family-card"><h3>mineKRON</h3><p>Token meme d'énergie, minage, machines, chauffage, hashing et culture minière.</p></article>
+          <article class="family-card"><h3>soviKRON</h3><p>Token meme SOVRA, IA souveraine, mythologie de l'intelligence et culture du chaos.</p></article>
+          <article class="family-card"><h3>alviKRON</h3><p>Token meme fille IA inspiré d'ALVINA de la Famille KRON.</p></article>
+          <article class="family-card"><h3>warpKRON</h3><p>Token meme de vitesse, routage, accélération, mouvement inter-systèmes et culture warp.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles" class="light">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Principes</div>
+          <h2>Culture meme à vitesse warp avec clarté publique.</h2>
+          <p class="section-text">warpKRON vise à être transparent sur son statut expérimental et son profil de risque dès le départ.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">01</div><h3>Pas de Revenus de Routage</h3><p>warpKRON ne promet pas de revenus de pont, de revenus de routage, de frais de transaction, de revenus de paiement, de dividendes ou de revenus passifs.</p></article>
+          <article class="card"><div class="icon">02</div><h3>Communauté d'Abord</h3><p>La valeur d'une memecoin dépend fortement de la communauté, de l'attention, de la culture, de la liquidité et des conditions du marché.</p></article>
+          <article class="card"><div class="icon">03</div><h3>Actif à Haut Risque</h3><p>Les memecoins peuvent perdre la majeure partie ou la totalité de leur valeur, devenir illiquides ou ne pas développer de marché significatif.</p></article>
+          <article class="card"><div class="icon">04</div><h3>Contrat Officiel Uniquement</h3><p>Vérifiez toujours le contrat officiel et méfiez-vous des faux tokens warpKRON, des faux airdrops, des liens malveillants et des imposteurs.</p></article>
+          <article class="card"><div class="icon">05</div><h3>Pas de Garde</h3><p>Les utilisateurs sont responsables de leurs propres portefeuilles, clés privées, approbations, transactions, sécurité et obligations fiscales.</p></article>
+          <article class="card"><div class="icon">06</div><h3>DYOR</h3><p>Faites toujours vos propres recherches et ne dépensez jamais d'argent que vous ne pouvez pas vous permettre de perdre.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Feuille de Route</div>
+          <h2>Un déploiement communautaire prudent et à haute vélocité.</h2>
+          <p class="section-text">Les éléments de la feuille de route sont des objectifs, pas des garanties. Les délais et livrables peuvent changer pour des raisons de marché, techniques, juridiques ou opérationnelles.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">I</div><h3>Site Web et Identité</h3><p>Lancer le site officiel warpkron.com, divulgations publiques, canaux officiels et identité visuelle haute vélocité.</p></article>
+          <article class="card"><div class="icon">II</div><h3>Vérification du Contrat</h3><p>Publier les informations officielles du contrat vérifié uniquement via les domaines officiels et communications publiques.</p></article>
+          <article class="card"><div class="icon">III</div><h3>Culture Warp</h3><p>Créer des memes de vitesse, visuels de routage, campagnes warp-drive, publications éducatives et actifs de marque.</p></article>
+          <article class="card"><div class="icon">IV</div><h3>Narratif d'Infrastructure</h3><p>Connecter l'histoire au routage, agents IA, chemins style EnteleLINK, mouvement inter-systèmes et rails de paiement futurs.</p></article>
+          <article class="card"><div class="icon">V</div><h3>Coordination Famille KRON</h3><p>Coordonner warpKRON avec eKRON, mineKRON, soviKRON et alviKRON en tant que tokens communautaires expérimentaux distincts.</p></article>
+          <article class="card"><div class="icon">VI</div><h3>Concepts d'Écosystème Futurs</h3><p>Rechercher l'utilité conceptuelle à long terme, intégrations ou futurs chemins EnteleKron, sans garantie.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="risk">
+      <div class="container">
+        <div class="dark-band">
+          <div class="kicker">Divulgation des Risques</div>
+          <h2>Lisez ceci avant d'interagir avec warpKRON.</h2>
+          <p class="section-text">
+            warpKRON est une memecoin expérimentale. Elle est spéculative, volatile et risquée. Elle peut n'avoir aucune utilité, aucun marché, aucune liquidité, aucun listing sur exchange, aucune demande secondaire, aucune continuation de développement et aucune valeur récupérable.
+          </p>
+          <div class="risk-grid">
+            <article class="risk-card"><h3>Pas de Conseil Financier</h3><p>Ce site web est uniquement à des fins d'information générale. Il ne fournit pas de conseil financier, d'investissement, commercial, juridique, fiscal ou comptable.</p></article>
+            <article class="risk-card"><h3>Pas de Garantie de Valeur</h3><p>Il n'y a aucune garantie que warpKRON aura de la valeur, conservera sa valeur, augmentera de prix ou sera négociable à tout moment futur.</p></article>
+            <article class="risk-card"><h3>Pas de Revenus de Protocole</h3><p>Détenir warpKRON ne donne pas droit aux revenus de pont, frais de routage, propriété de protocole, revenus de paiement, récompenses, dividendes ou partage de revenus.</p></article>
+            <article class="risk-card"><h3>Pas de Liquidité Garantie</h3><p>La liquidité peut être limitée, temporaire, retirée, insuffisante ou indisponible. Les utilisateurs peuvent ne pas pouvoir vendre leurs tokens.</p></article>
+            <article class="risk-card"><h3>Risque de Contrat Intelligent</h3><p>Les contrats intelligents peuvent contenir des bugs, vulnérabilités, mauvaises configurations ou risques irréversibles. L'examen indépendant est essentiel.</p></article>
+            <article class="risk-card"><h3>Risque de Portefeuille et Phishing</h3><p>Les utilisateurs peuvent perdre des fonds par phishing, liens malveillants, faux contrats, portefeuilles compromis, exposition de phrase de récupération ou transactions erronées.</p></article>
+            <article class="risk-card"><h3>Risque Réglementaire</h3><p>Les règles crypto peuvent changer selon la juridiction. Les utilisateurs sont responsables de comprendre les restrictions locales, devoirs fiscaux et obligations légales.</p></article>
+            <article class="risk-card"><h3>Responsabilité Indépendante</h3><p>En interagissant avec warpKRON, les utilisateurs acceptent l'entière responsabilité de leurs propres recherches, sécurité de portefeuille, transactions et décisions de risque.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="light">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Liens Officiels</div>
+          <h2>Utilisez uniquement les sources officielles.</h2>
+          <p class="section-text">Vérifiez toujours soigneusement les noms de domaine. Méfiez-vous des faux contrats, sites web clonés, faux airdrops, faux comptes de support et arnaques par message direct.</p>
+        </div>
+        <div class="links-grid">
+          <div class="link-card"><span>Domaine</span><a href="https://www.warpkron.com/" target="_blank" rel="noopener noreferrer">www.warpkron.com</a></div>
+          <div class="link-card"><span>Contrat</span><a href="#token">Sera publié officiellement</a></div>
+          <div class="link-card"><span>TVK Group</span><a href="https://www.tvk.group/" target="_blank" rel="noopener noreferrer">www.tvk.group</a></div>
+          <div class="link-card"><span>TVK Labs</span><a href="https://www.tvklabs.com/" target="_blank" rel="noopener noreferrer">www.tvklabs.com</a></div>
+          <div class="link-card"><span>EnteleLINK</span><a href="https://www.entelelink.com/" target="_blank" rel="noopener noreferrer">www.entelelink.com</a></div>
+          <div class="link-card"><span>EnteleKron</span><a href="https://www.entelekron.org/" target="_blank" rel="noopener noreferrer">www.entelekron.org</a></div>
+          <div class="link-card"><span>SOVRA</span><a href="https://www.sovra.network/" target="_blank" rel="noopener noreferrer">www.sovra.network</a></div>
+          <div class="link-card"><span>Social</span><a href="#links">Twitter/X et Telegram bientôt disponibles</a></div>
+          <div class="link-card"><span>Contact</span><a href="mailto:contact@tvklabs.com">contact@tvklabs.com</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 warpKRON · Memecoin de Vélocité et Routage de la Famille KRON.</span>
+      <div class="footer-links">
+        <span>Expérimental</span>
+        <span>Pas de conseil financier</span>
+        <span>Pas de promesse de revenus de routage</span>
+        <span>DYOR</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle = document.querySelector('[data-mobile-toggle]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    if (mobileToggle && mobileMenu) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('menu-open');
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          document.body.classList.remove('menu-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
