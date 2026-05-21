@@ -2,20 +2,10 @@
 
 ## Cursor Cloud specific instructions
 
-This is a single-file static website (`index.html`) with no build system, no dependencies, and no backend.
+This is a static HTML/CSS/JS website (no build step, no package manager).
 
-### Running the dev server
-
-```bash
-python3 -m http.server 3000 --directory /workspace
-```
-
-Then visit `http://localhost:3000/` in a browser.
-
-### Key facts
-
-- No `package.json`, no Node.js dependencies, no build step.
-- All CSS and JS are inline in `index.html`.
-- Deployed to Vercel as a static site (see `vercel.json` for rewrite rules).
-- No linter, test framework, or CI pipeline is configured.
-- No environment variables or secrets are needed.
+- **Dev server**: Run `python3 -m http.server 8080` from the workspace root to serve the site locally.
+- **Lint**: No linter configured; the site is vanilla HTML with inline CSS and a single `lang.js` script.
+- **Build**: No build step required. The site is deployed as-is to Vercel (see `vercel.json`).
+- **Testing**: Open `http://localhost:8080/index.html` in a browser. Verify the language dropdown works and translations load correctly from `lang.js`.
+- **Key files**: `index.html` (full page with inline styles), `lang.js` (i18n translations + helper functions), `vercel.json` (Vercel config).
