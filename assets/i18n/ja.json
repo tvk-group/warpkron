@@ -40,7 +40,8 @@
     "network": "Network: Base",
     "fairLaunch": "Fair Launch Only",
     "supply": "10B Fixed Supply",
-    "noMint": "No Mint"
+    "noMint": "No Mint",
+    "demandGated": "Demand-Gated · Phase III"
   },
   "registry": {
     "title": "On-Chain Address Registry",
@@ -60,7 +61,13 @@
     "roleFounder12Lock": "12-month lock policy",
     "contractV2": "warpKRON (Official)",
     "genesis": "Genesis / Deployer",
-    "v1Note": "誤った on-chain 名 eKron — 使用しないでください"
+    "v1Note": "誤った on-chain 名 eKron — 使用しないでください",
+    "pendingDesc": "warpKRON is Phase III demand-gated. No contract is deployed yet — addresses will appear here only after official fair launch.",
+    "pendingBadge": "Demand-Gated — Phase III",
+    "pendingStatus": "Contract not deployed",
+    "pendingNote": "Culture-first community experiments. Deployment follows organic demand and the KRON Fair Launch Standard — no presale, no private sale.",
+    "gatewayNote": "Primary KRON Family gateway:",
+    "contractPending": "warpKRON (Pending Deployment)"
   },
   "home": {
     "pageTitle": "warpKRON — Phase III Demand-Gated KRON Family Memecoin | Fair Launch on Base",
@@ -151,7 +158,17 @@
     "badgeDemandGated": "Demand-Gated",
     "badgeLive": "Phase I",
     "badgeQueued": "Phase II",
-    "badgeGated": "Phase III"
+    "badgeGated": "Phase III",
+    "tagDemandGated": "Demand-Gated",
+    "tagPhaseIII": "Phase III",
+    "btnGateway": "eKRON Gateway",
+    "chipDemand": "Demand-Gated",
+    "chipPhaseIII": "Phase III",
+    "chipWarp": "Warp Culture",
+    "tokenContractPending": "Not deployed — demand-gated Phase III",
+    "progOpenTitle": "Open Source",
+    "progOpenDesc": "Smart contracts and launch tooling are published in the Launch Program on www.ekron.network. Review audits, tokenomics, and deployment steps — no terminal commands on this homepage.",
+    "badgeCurrent": "This Site"
   },
   "verify": {
     "pageTitle": "warpKRON – Official Verification & On-Chain Registry",
@@ -162,10 +179,11 @@
     "deprecated": "<strong>非推奨 V1 — 使用しないでください：</strong> <code>0x4ecFDb524C58e8d54f43f542Ceb156AA5B6094d0</code>（誤った on-chain 名 <code>eKron</code>）。<a href=\"https://basescan.org/token/0x4ecFDb524C58e8d54f43f542Ceb156AA5B6094d0\" target=\"_blank\" rel=\"noopener\">BaseScan で V1 を表示</a>",
     "factsTitle": "Token Facts",
     "policyTitle": "Anti-Dump Policy",
-    "policyDesc": "Locked allocation sales require <strong>14 days public notice</strong> and max <strong>10% per sale event</strong>. See the <a href=\"/standard/\">KRON Fair Launch Standard</a>. On-chain timelock contracts deploy via the <a href=\"https://www.warpkron.com/program/\" target=\"_blank\" rel=\"noopener\">Launch Program</a>.",
+    "policyDesc": "Locked allocation sales require <strong>14 days public notice</strong> and max <strong>10% per sale event</strong>. See the <a href=\"/standard/\">KRON Fair Launch Standard</a>. On-chain timelock contracts deploy via the <a href=\"https://www.ekron.network/program/\" target=\"_blank\" rel=\"noopener\">Launch Program</a>.",
     "channelsTitle": "Official Channels",
     "timelocks": "On-chain timelocks at deployment",
-    "footer": "© 2026 warpKRON · Official Verification"
+    "footer": "© 2026 warpKRON · Official Verification",
+    "pendingNotice": "<strong>No contract deployed yet.</strong> Addresses will appear here only after official fair launch. Primary KRON gateway: <a href=\"https://www.ekron.network/\" target=\"_blank\" rel=\"noopener\">www.ekron.network</a>."
   },
   "contact": {
     "email": "team@warpkron.com",
@@ -175,11 +193,11 @@
     "q1": "Does warpKRON have a presale?",
     "a1": "No. warpKRON and all KRON Family memecoins follow the <a href=\"/standard/\">KRON Fair Launch Standard</a> — no presale and no private sale, ever. Infrastructure tokens (ENK, SOVRA, ENM) may use structured raises; memecoins do not.",
     "q2": "What is the KRON Family?",
-    "a2": "Seven independent experimental memecoins sharing a brand universe: eKRON, soviKRON, mineKRON, alviKRON, puriKRON, puppyKRON, and warpKRON. Each has its own contract and risk profile. Primary gateway: <a href=\"https://www.warpkron.com/\" target=\"_blank\" rel=\"noopener\">www.warpkron.com</a>. See the <a href=\"/family/\">full roster</a>.",
+    "a2": "Seven independent experimental memecoins sharing a brand universe: eKRON, soviKRON, mineKRON, alviKRON, puriKRON, puppyKRON, and warpKRON. Each has its own contract and risk profile. Primary gateway: <a href=\"https://www.ekron.network/\" target=\"_blank\" rel=\"noopener\">www.ekron.network</a>. See the <a href=\"/family/\">full roster</a>.",
     "q3": "Is warpKRON the same as EnteleKron?",
     "a3": "No. warpKRON is a memecoin. EnteleKron is sovereign infrastructure. Names are connected by brand family — they are not the same asset or protocol.",
     "q4": "What is the tokenomics?",
-    "a4": "Every KRON memecoin: 10B fixed supply, 80% fair-launch LP, 10% ecosystem (12-month lock), 5% founder (6-month lock), 5% founder (12-month lock). Enforced by on-chain timelocks via the <a href=\"https://www.warpkron.com/program/\" target=\"_blank\" rel=\"noopener\">launch program</a>.",
+    "a4": "Every KRON memecoin: 10B fixed supply, 80% fair-launch LP, 10% ecosystem (12-month lock), 5% founder (6-month lock), 5% founder (12-month lock). Enforced by on-chain timelocks via the <a href=\"https://www.ekron.network/program/\" target=\"_blank\" rel=\"noopener\">launch program</a>.",
     "q5": "How do I verify the official contract?",
     "a5": "Only trust addresses on the <a href=\"/verify/\">official verification page</a> and announcements from official domains. If it is not verified there, assume it is not official. warpKRON has no contract yet.",
     "q6": "When will warpKRON deploy?",
@@ -210,5 +228,52 @@
     "warning": "Warning: Memecoins are extremely volatile. You can lose all funds. No guaranteed price, liquidity, listing, or returns.",
     "acceptBtn": "Accept All Cookies & Policies",
     "declineNote": "You must accept to view the warpKRON homepage. Official (binding) legal language: English."
+  },
+  "channels": {
+    "warpkron": "warpKRON",
+    "warpkronDesc": "Phase III demand-gated spin-off — warp-speed culture meme and verification hub.",
+    "ekron": "eKRON Gateway",
+    "ekronDesc": "Primary KRON Family memecoin gateway, verification hub, and fair-launch documentation.",
+    "verify": "Verification",
+    "verifyDesc": "Official on-chain registry — contract and allocation wallet addresses with BaseScan links.",
+    "standard": "Fair Launch Standard",
+    "standardDesc": "Published launch policy: no presale, no private sale, on-chain locks for all KRON memecoins.",
+    "family": "KRON Family",
+    "familyDesc": "Full roster of seven experimental memecoins and phased rollout schedule.",
+    "program": "Launch Program",
+    "programDesc": "Open-source Solidity contracts and developer documentation for fair launches on Base.",
+    "sovikron": "soviKRON",
+    "sovikronDesc": "SOVRA-inspired culture lane — Phase II satellite memecoin.",
+    "minekron": "mineKRON",
+    "minekronDesc": "Mining and infrastructure-inspired meme lane — Phase II satellite.",
+    "alvikron": "alviKRON",
+    "alvikronDesc": "Creator-economy culture token for builders — Phase II satellite.",
+    "purikron": "puriKRON",
+    "purikronDesc": "Community spin-off — Phase III demand-gated memecoin.",
+    "puppykron": "puppyKRON",
+    "puppykronDesc": "Playful spin-off — Phase III demand-gated memecoin.",
+    "tvkGroup": "TVK Group",
+    "tvkGroupDesc": "Parent ecosystem brand connecting memecoin culture rails and sovereign infrastructure.",
+    "tvkCorp": "TVK Corporate",
+    "tvkCorpDesc": "Corporate portal for TVK Group — company information and official announcements.",
+    "tvkLabs": "TVK Labs",
+    "tvkLabsDesc": "Research, engineering, and launch studio behind KRON Family and related protocols.",
+    "entelekronOrg": "EnteleKron",
+    "entelekronOrgDesc": "Sovereign AI infrastructure ecosystem — separate from KRON memecoins.",
+    "entelekronIo": "EnteleKron Platform",
+    "entelekronIoDesc": "EnteleKron applications, platform access, and product interfaces.",
+    "sovraNetwork": "SOVRA Network",
+    "sovraNetworkDesc": "SOVRA community hub, network information, and ecosystem updates.",
+    "sovraProtocol": "SOVRA Protocol",
+    "sovraProtocolDesc": "On-chain governance and protocol layer for the SOVRA ecosystem."
+  },
+  "family": {
+    "ekronDesc": "Primary gateway. Sets the fair-launch template.",
+    "sovikronDesc": "SOVRA-inspired culture lane. Not a SOVRA presale.",
+    "minekronDesc": "Mining and infrastructure-inspired meme lane.",
+    "alvikronDesc": "Creator-economy culture token for builders.",
+    "purikronDesc": "Community spin-off. Demand-gated deployment.",
+    "puppykronDesc": "Playful spin-off. Culture before contract.",
+    "warpkronDesc": "Experimental warp-speed culture meme. This site."
   }
 }
