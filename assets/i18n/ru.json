@@ -27,7 +27,8 @@
     "fairLaunchStandard": "Стандарт Fair Launch",
     "launchProgram": "Программа запуска",
     "onchainRegistry": "On-Chain реестр",
-    "riskDisclosure": "Предупреждение о рисках"
+    "riskDisclosure": "Предупреждение о рисках",
+    "app": "Приложение"
   },
   "footer": {
     "copyright": "© 2026 warpKRON · KRON Family · Fair Launch on Base.",

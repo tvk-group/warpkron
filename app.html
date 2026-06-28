@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>warpKRON Community App — Demand-Gated Memecoin Portal</title>
+  <meta name="description" content="warpKRON community app — install on your phone for demand signals, token status, verification links, and KRON Family navigation. Fair launch only — no presale." />
+  <link rel="canonical" href="https://www.warpkron.com/app.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="warpKRON" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="warpKRON Community App" />
+  <meta property="og:description" content="Community portal for warpKRON — demand signals, dashboard, and verification. Install on your home screen." />
+  <meta property="og:image" content="https://www.warpkron.com/assets/logo.png" />
+  <meta property="og:url" content="https://www.warpkron.com/app.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/assets/css/kron.css" />
+  <link rel="stylesheet" href="/assets/css/app.css" />
+</head>
+<body class="app-shell">
+  <div id="app-topbar-mount"></div>
+
+  <main>
+    <section class="app-hero">
+      <div class="app-badge" id="app-phase-badge">Phase III · Demand-Gated</div>
+      <img src="/assets/logo.png" alt="warpKRON" width="72" height="72" class="app-logo" />
+      <h1>warpKRON Community App</h1>
+      <p class="lead">Install the community portal on your phone — register demand signals, check token status, and open official verification links from a home-screen icon. Same warpKRON site, optimized for mobile.</p>
+
+      <div class="app-status-strip" aria-label="Token status">
+        <span class="app-status-pill gated">Phase III</span>
+        <span class="app-status-pill green">Fair Launch Only</span>
+        <span class="app-status-pill">No Presale</span>
+        <span class="app-status-pill">Base Network</span>
+      </div>
+
+      <button type="button" class="btn-app primary" id="pwa-install-btn" hidden>Install app</button>
+    </section>
+
+    <nav class="app-actions" aria-label="Community quick actions">
+      <a class="app-action-card primary" href="/signal.html">
+        <span class="icon" aria-hidden="true">◎</span>
+        <strong>Community Demand Signal</strong>
+        <span>Register culture interest — not a presale or allocation</span>
+      </a>
+      <a class="app-action-card" href="/dashboard.html">
+        <span class="icon" aria-hidden="true">◉</span>
+        <strong>Dashboard</strong>
+        <span>Token status · family · journey</span>
+      </a>
+      <a class="app-action-card" href="/verify/">
+        <span class="icon" aria-hidden="true">✓</span>
+        <strong>Verify</strong>
+        <span>Official contract registry</span>
+      </a>
+      <a class="app-action-card" href="/family/">
+        <span class="icon" aria-hidden="true">☰</span>
+        <strong>KRON Family</strong>
+        <span>Seven fair-launch memecoins</span>
+      </a>
+      <a class="app-action-card" href="/standard/">
+        <span class="icon" aria-hidden="true">§</span>
+        <strong>Fair Launch Standard</strong>
+        <span>No presale · on-chain locks</span>
+      </a>
+      <a class="app-action-card" href="https://www.ekron.network/" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true">→</span>
+        <strong>eKRON Gateway</strong>
+        <span>Primary KRON Family hub</span>
+      </a>
+    </nav>
+
+    <section class="app-section" id="install">
+      <h2>How to install</h2>
+      <div class="install-steps">
+        <div class="install-step">
+          <h3>iPhone / iPad</h3>
+          <p>Safari → <strong>www.warpkron.com/app.html</strong> → Share → <strong>Add to Home Screen</strong></p>
+        </div>
+        <div class="install-step" id="pwa-ios-hint" hidden>
+          <h3>On this iPhone</h3>
+          <p>Tap the Share button in Safari, then choose <strong>Add to Home Screen</strong> to install warpKRON.</p>
+        </div>
+        <div class="install-step">
+          <h3>Android</h3>
+          <p>Chrome → <strong>www.warpkron.com/app.html</strong> → menu → <strong>Install app</strong> or Add to Home screen</p>
+        </div>
+        <div class="install-step">
+          <h3>Desktop</h3>
+          <p>Chrome or Edge → install icon in the address bar, or bookmark <strong>www.warpkron.com/app.html</strong></p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:14px;font-size:0.8rem;color:var(--muted)">App Store listing may follow later. Add to Home Screen works today. This is a community portal — not an investment product.</p>
+    </section>
+
+    <p class="app-site-link">Full marketing site: <a href="/">www.warpkron.com</a></p>
+  </main>
+
+  <div id="pwa-install-banner" hidden>
+    <span>Install warpKRON for faster community access</span>
+    <button type="button" class="btn-app primary sm" id="pwa-install-banner-btn">Install</button>
+  </div>
+
+  <div id="app-tabbar-mount"></div>
+  <div id="app-footer-mount"></div>
+
+  <script src="/assets/js/kron-data.js" defer></script>
+  <script src="/assets/js/app-portal.js" defer></script>
+  <script src="/assets/js/app-pwa.js" defer></script>
+</body>
+</html>

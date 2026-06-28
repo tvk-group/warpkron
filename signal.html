@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Community Demand Signal — warpKRON</title>
+  <meta name="description" content="Register community demand interest for warpKRON Phase III. Culture feedback only — not a presale, KYC, or token allocation." />
+  <link rel="canonical" href="https://www.warpkron.com/signal.html" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="warpKRON" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/assets/css/kron.css" />
+  <link rel="stylesheet" href="/assets/css/app.css" />
+</head>
+<body class="app-shell">
+  <div id="app-topbar-mount"></div>
+
+  <main class="signal-wrap">
+    <header class="dash-header">
+      <span class="tag">Community Demand Signal</span>
+      <h1>Register culture interest</h1>
+      <p class="muted">Phase III demand-gated memecoin. This form saves locally on your device — it is <strong>not</strong> a presale, investment application, or token allocation.</p>
+    </header>
+
+    <div class="signal-success" id="signal-success" hidden>
+      <h2>Signal saved on this device</h2>
+      <p>Reference: <strong id="signal-ref"></strong></p>
+      <p style="margin-top:8px">Submitted: <span id="signal-when"></span></p>
+      <p style="margin-top:14px;font-size:0.85rem">Thank you for community feedback. Deployment follows organic demand and the KRON Fair Launch Standard — no timeline guarantees.</p>
+      <p style="margin-top:16px">
+        <a class="btn-app primary sm" href="/dashboard.html">View dashboard →</a>
+        <button type="button" class="btn-app ghost sm" id="signal-clear-btn" style="margin-left:8px">Clear signal</button>
+      </p>
+    </div>
+
+    <form class="signal-form" id="signal-form">
+      <div class="signal-note">
+        <strong>Not financial advice.</strong> warpKRON is an experimental memecoin. Submitting a demand signal does not guarantee deployment, listing, liquidity, or any return. No funds are collected here.
+      </div>
+
+      <div class="signal-field">
+        <label for="displayName">Display name *</label>
+        <input type="text" id="displayName" name="displayName" required maxlength="64" placeholder="Community handle or nickname" autocomplete="nickname" />
+      </div>
+
+      <div class="signal-field">
+        <label for="region">Region (optional)</label>
+        <input type="text" id="region" name="region" maxlength="64" placeholder="Country or timezone" autocomplete="country-name" />
+      </div>
+
+      <div class="signal-field">
+        <label for="interest">Interest level *</label>
+        <select id="interest" name="interest" required>
+          <option value="">Select…</option>
+          <option value="culture">Culture &amp; memes only</option>
+          <option value="community">Active community participant</option>
+          <option value="builder">Builder / creator</option>
+          <option value="observer">Observer — following rollout</option>
+        </select>
+      </div>
+
+      <div class="signal-field">
+        <label for="wallet">Wallet address (optional)</label>
+        <input type="text" id="wallet" name="wallet" maxlength="66" placeholder="0x… (for your own records — not verified)" autocomplete="off" spellcheck="false" />
+      </div>
+
+      <div class="signal-field">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" maxlength="500" placeholder="What kind of warp-speed culture experiments interest you?"></textarea>
+      </div>
+
+      <div class="signal-field">
+        <label style="display:flex;align-items:flex-start;gap:10px;font-weight:500;cursor:pointer">
+          <input type="checkbox" name="disclaimer" required style="width:auto;margin-top:4px" />
+          <span>I understand this is culture feedback only — not a presale, private sale, investment, or guaranteed allocation. I accept the <a href="/legal/risk.html">risk disclosure</a>.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-app primary">Save demand signal on this device</button>
+    </form>
+  </main>
+
+  <div id="app-tabbar-mount"></div>
+  <div id="app-footer-mount"></div>
+
+  <script src="/assets/js/app-portal.js" defer></script>
+  <script src="/assets/js/app-pwa.js" defer></script>
+  <script src="/assets/js/app-signal.js" defer></script>
+</body>
+</html>

@@ -37,6 +37,14 @@
     { "src": "/program", "dest": "/program/index.html" },
     { "src": "/program/", "dest": "/program/index.html" },
     { "src": "/legal/(.*)", "dest": "/legal/$1" },
+    { "src": "/app", "dest": "/app.html" },
+    { "src": "/app/", "dest": "/app.html" },
+    { "src": "/dashboard", "dest": "/dashboard.html" },
+    { "src": "/dashboard/", "dest": "/dashboard.html" },
+    { "src": "/signal", "dest": "/signal.html" },
+    { "src": "/signal/", "dest": "/signal.html" },
+    { "src": "/manifest.webmanifest", "dest": "/manifest.webmanifest" },
+    { "src": "/sw.js", "dest": "/sw.js" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" }
   ]
 }

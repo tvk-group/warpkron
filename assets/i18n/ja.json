@@ -27,7 +27,8 @@
     "fairLaunchStandard": "Fair Launch スタンダード",
     "launchProgram": "ローンチプログラム",
     "onchainRegistry": "On-Chain レジストリ",
-    "riskDisclosure": "リスク開示"
+    "riskDisclosure": "リスク開示",
+    "app": "アプリ"
   },
   "footer": {
     "copyright": "© 2026 warpKRON · KRON Family · Fair Launch on Base.",
