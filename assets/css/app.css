@@ -222,6 +222,114 @@
   display: none !important;
 }
 
+/* PWA install sheet */
+.pwa-install-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: end center;
+}
+
+.pwa-install-sheet[hidden] {
+  display: none !important;
+}
+
+.pwa-install-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.pwa-install-panel {
+  position: relative;
+  width: min(100%, 440px);
+  max-height: 88vh;
+  overflow: auto;
+  margin: 12px;
+  padding: 24px 22px 28px;
+  border-radius: 22px 22px 18px 18px;
+  background: #0f172a;
+  border: 1px solid rgba(6, 182, 212, 0.28);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.pwa-install-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.pwa-install-icon {
+  border-radius: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 28px rgba(6, 182, 212, 0.25);
+}
+
+.pwa-install-panel h2 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.pwa-install-lead {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.pwa-install-steps ol {
+  margin: 0 0 16px 1.1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.pwa-install-steps li + li {
+  margin-top: 8px;
+}
+
+.pwa-install-steps strong {
+  color: var(--soft);
+}
+
+.pwa-share-icon {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.pwa-install-note {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+body.pwa-sheet-open {
+  overflow: hidden;
+}
+
+html.pwa-standalone .app-tabbar,
+.pwa-standalone #pwa-install-banner,
+.pwa-standalone [data-pwa-install] {
+  display: none !important;
+}
+
+.btn-app.btn-block {
+  width: 100%;
+  margin-top: 8px;
+}
+
 .app-tabbar {
   position: fixed;
   left: 0;

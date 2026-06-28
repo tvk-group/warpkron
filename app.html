@@ -13,12 +13,12 @@
   <meta name="apple-mobile-web-app-title" content="warpKRON" />
   <meta name="mobile-web-app-capable" content="yes" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="icon" href="/assets/logo.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <link rel="icon" href="/assets/icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="warpKRON Community App" />
   <meta property="og:description" content="Community portal for warpKRON — demand signals, dashboard, and verification. Install on your home screen." />
-  <meta property="og:image" content="https://www.warpkron.com/assets/logo.png" />
+  <meta property="og:image" content="https://www.warpkron.com/assets/icons/icon-512.png" />
   <meta property="og:url" content="https://www.warpkron.com/app.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,9 +31,9 @@
   <main>
     <section class="app-hero">
       <div class="app-badge" id="app-phase-badge">Phase III · Demand-Gated</div>
-      <img src="/assets/logo.png" alt="warpKRON" width="72" height="72" class="app-logo" />
+      <img src="/assets/icons/icon-192.png" alt="warpKRON" width="72" height="72" class="app-logo" />
       <h1>warpKRON Community App</h1>
-      <p class="lead">Install the community portal on your phone — register demand signals, check token status, and open official verification links from a home-screen icon. Same warpKRON site, optimized for mobile.</p>
+      <p class="lead">Install the community portal on your phone — register demand signals, check token status, and open official verification links from a home-screen icon. Works today via Add to Home Screen.</p>
 
       <div class="app-status-strip" aria-label="Token status">
         <span class="app-status-pill gated">Phase III</span>
@@ -42,7 +42,8 @@
         <span class="app-status-pill">Base Network</span>
       </div>
 
-      <button type="button" class="btn-app primary" id="pwa-install-btn" hidden>Install app</button>
+      <button type="button" class="btn-app primary" id="pwa-install-btn" data-pwa-install data-label-native="Install app" data-label-manual="Add to Home Screen">Add to Home Screen</button>
+      <p class="muted" style="margin-top:10px;font-size:0.8rem;color:var(--muted)" id="pwa-install-hint">Tap to install warpKRON on this device.</p>
     </section>
 
     <nav class="app-actions" aria-label="Community quick actions">
