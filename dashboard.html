@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Community Dashboard — warpKRON</title>
+  <meta name="description" content="warpKRON community dashboard — Phase III status, contract pending state, KRON Family links, and your local demand signal." />
+  <link rel="canonical" href="https://www.warpkron.com/dashboard.html" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="warpKRON" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/assets/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/assets/css/kron.css" />
+  <link rel="stylesheet" href="/assets/css/app.css" />
+</head>
+<body class="app-shell">
+  <div id="app-topbar-mount"></div>
+
+  <main class="dash-wrap">
+    <header class="dash-header">
+      <span class="tag">Community Dashboard</span>
+      <h1>warpKRON status</h1>
+      <p class="muted">Live token facts from the official registry. Contract pending until Phase III demand justifies fair launch.</p>
+    </header>
+
+    <section class="dash-journey" aria-label="Community journey">
+      <div class="dash-journey-step done" data-step="culture">
+        <div class="dot">1</div>
+        <div class="label">Culture</div>
+      </div>
+      <div class="dash-journey-step" data-step="signal">
+        <div class="dot">2</div>
+        <div class="label">Signal</div>
+      </div>
+      <div class="dash-journey-step" data-step="verify">
+        <div class="dot">3</div>
+        <div class="label">Verify</div>
+      </div>
+      <div class="dash-journey-step" data-step="launch">
+        <div class="dot">4</div>
+        <div class="label">Fair Launch</div>
+      </div>
+    </section>
+
+    <section class="dash-kpi-row" aria-label="Key metrics">
+      <div class="dash-kpi">
+        <span class="label">Status</span>
+        <span class="value violet" id="dash-status">—</span>
+      </div>
+      <div class="dash-kpi">
+        <span class="label">Phase</span>
+        <span class="value" id="dash-phase">—</span>
+      </div>
+      <div class="dash-kpi">
+        <span class="label">Network</span>
+        <span class="value cyan" id="dash-network">—</span>
+      </div>
+      <div class="dash-kpi">
+        <span class="label">Supply</span>
+        <span class="value" id="dash-supply">—</span>
+      </div>
+    </section>
+
+    <article class="dash-card">
+      <h3>Contract &amp; verification</h3>
+      <div id="dash-contract-body">
+        <p>Loading registry data…</p>
+      </div>
+    </article>
+
+    <article class="dash-card">
+      <h3>Your demand signal</h3>
+      <p id="dash-signal-note">Checking local device storage…</p>
+      <p style="margin-top:12px">
+        <a class="btn-app primary sm" href="/signal.html">Open demand signal →</a>
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <h3>KRON Family roster</h3>
+      <p>Seven independent fair-launch memecoins. warpKRON is Phase III demand-gated.</p>
+      <div class="dash-family-list" id="dash-family-list"></div>
+      <p style="margin-top:12px">
+        <a class="btn-app ghost sm" href="/family/">Full family page →</a>
+      </p>
+    </article>
+
+    <article class="dash-card">
+      <h3>Quick links</h3>
+      <p>
+        <a href="/verify/">Verification registry</a> ·
+        <a href="/standard/">Fair Launch Standard</a> ·
+        <a href="https://www.ekron.network/program/" target="_blank" rel="noopener">Launch Program</a> ·
+        <a href="mailto:team@warpkron.com">team@warpkron.com</a>
+      </p>
+    </article>
+  </main>
+
+  <div id="app-tabbar-mount"></div>
+  <div id="app-footer-mount"></div>
+
+  <script src="/assets/js/kron-data.js" defer></script>
+  <script src="/assets/js/app-portal.js" defer></script>
+  <script src="/assets/js/app-pwa.js" defer></script>
+  <script src="/assets/js/app-dashboard.js" defer></script>
+</body>
+</html>
