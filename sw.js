@@ -1,5 +1,5 @@
 /* warpKRON Community App — PWA service worker */
-const CACHE = 'warpkron-community-v1';
+const CACHE = 'warpkron-community-v2';
 const PRECACHE = [
   '/app.html',
   '/signal.html',
@@ -11,6 +11,9 @@ const PRECACHE = [
   '/assets/js/app-pwa.js',
   '/assets/js/app-dashboard.js',
   '/assets/js/app-signal.js',
+  '/assets/icons/icon-192.png',
+  '/assets/icons/icon-512.png',
+  '/assets/icons/apple-touch-icon.png',
   '/assets/logo.png',
   '/manifest.webmanifest'
 ];
