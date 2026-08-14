@@ -1,5 +1,5 @@
 /* warpKRON Community App — PWA service worker */
-const CACHE = 'warpkron-community-v2';
+const CACHE = 'warpkron-community-v3';
 const PRECACHE = [
   '/app.html',
   '/signal.html',
